@@ -1,4 +1,4 @@
-# $Revision: 1.10 $ $Date: 2000-05-27 22:49:02 $
+# $Revision: 1.11 $ $Date: 2000-05-28 10:27:45 $
 Summary:	Network resources viewer and manager
 Summary(pl):	Narzêdzie do wizualizacji i zarz±dzania zasobami sieciowymi
 Name:		cheops
@@ -34,8 +34,8 @@ do ich sprzêtu sieciowego.
 %setup -q
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" \
-./configure --prefix=/usr 
+LDFLAGS="-s"; export LDFLAGS
+%configure
 make 
 
 %install
