@@ -1,4 +1,4 @@
-# $Revision: 1.3 $ $Date: 1999-09-04 09:11:43 $
+# $Revision: 1.4 $ $Date: 2000-03-27 12:39:55 $
 Summary: 	Network resources viewer and manager
 Summary(pl):	Narzêdzie do wizualizacji i zarz±dzania zasobami sieciowymi
 Name:		cheops
@@ -23,11 +23,10 @@ adminstrators with a simple interface to identyfying and
 accessing their network hardware.
 
 %description -l pl
-Cheops ma aspiracje bycia sieciowym "no¿em szwajcarskim" u¿ywanym do 
-obrazowania i dostêpu do zasobów sieciowych. Zosta³ napisany z u¿yciem GTK+
-i u¿ywa ró¿nych narzêdzi sieciowych (ping, traceroute, halfscan, QueSO) 
-umo¿liwiaj±c administratorom prost± identyfikacjê oraz dostêp do 
-ich sprzêtu sieciowego.
+Cheops ma byæ "sieciowym scyzorykiem" u¿ywanym do obrazowania i dostêpu 
+do zasobów sieciowych. Zosta³ napisany przy u¿yciu GTK+; wykorzystuje ró¿ne
+narzêdzia sieciowe (ping, traceroute, halfscan, QueSO), umo¿liwiaj±c 
+administratorom prost± identyfikacjê oraz dostêp do ich sprzêtu sieciowego.
 
 %prep
 %setup -q
