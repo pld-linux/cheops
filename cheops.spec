@@ -1,4 +1,4 @@
-# $Revision: 1.26 $ $Date: 2002-05-13 09:55:05 $
+# $Revision: 1.27 $ $Date: 2002-05-13 10:00:14 $
 Summary:	Network resources viewer and manager
 Summary(pl):	Narzêdzie do wizualizacji i zarz±dzania zasobami sieciowymi
 Name:		cheops
@@ -12,7 +12,7 @@ Source2:	%{name}.png
 URL:		http://www.marko.net/cheops/
 BuildRequires:	autoconf
 BuildRequires:	gtk+-devel
-BuildRequires:	ucd-snmp-devel >= 4.2.4
+BuildRequires:	ucd-snmp-devel >= 4.2.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
