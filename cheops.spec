@@ -1,9 +1,9 @@
-# $Revision: 1.25 $ $Date: 2002-04-25 16:04:52 $
+# $Revision: 1.26 $ $Date: 2002-05-13 09:55:05 $
 Summary:	Network resources viewer and manager
 Summary(pl):	Narzêdzie do wizualizacji i zarz±dzania zasobami sieciowymi
 Name:		cheops
 Version:	0.61
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	ftp://ftp.marko.net/pub/cheops/%{name}-%{version}.tar.gz
@@ -12,7 +12,7 @@ Source2:	%{name}.png
 URL:		http://www.marko.net/cheops/
 BuildRequires:	autoconf
 BuildRequires:	gtk+-devel
-BuildRequires:	ucd-snmp-devel >= 4.2.3
+BuildRequires:	ucd-snmp-devel >= 4.2.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
