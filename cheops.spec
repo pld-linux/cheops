@@ -1,4 +1,4 @@
-# $Revision: 1.18 $ $Date: 2001-11-22 10:43:44 $
+# $Revision: 1.19 $ $Date: 2001-11-23 07:39:00 $
 Summary:	Network resources viewer and manager
 Summary(pl):	Narzêdzie do wizualizacji i zarz±dzania zasobami sieciowymi
 Name:		cheops
@@ -8,11 +8,12 @@ License:	GPL
 Group:		X11/Applications/Networking
 Group(de):	X11/Applikationen/Netzwerkwesen
 Group(pl):	X11/Aplikacje/Sieciowe
-Url:		http://www.marko.net/cheops
 Source0:	ftp://ftp.marko.net/pub/cheops/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
-BuildRequires:	gtk+-devel
+Source1:	%{name}.png
+URL:		http://www.marko.net/cheops/
 BuildRequires:	autoconf
+BuildRequires:	gtk+-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -43,14 +44,14 @@ autoconf
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/cheops,%{_datadir}/cheops} \
-	$RPM_BUILD_ROOT%{_applnkdir}/Network/Misc
+	$RPM_BUILD_ROOT{%{_applnkdir}/Network/Misc,%{_pixmapsdir}}
 
-install cheops ${RPM_BUILD_ROOT}%{_bindir}
-install pixmaps/*.xpm cheops.conf services.conf ${RPM_BUILD_ROOT}%{_datadir}/cheops
-install plugins/*.so ${RPM_BUILD_ROOT}%{_libdir}/cheops
+install cheops $RPM_BUILD_ROOT%{_bindir}
+install pixmaps/*.xpm cheops.conf services.conf $RPM_BUILD_ROOT%{_datadir}/cheops
+install plugins/*.so $RPM_BUILD_ROOT%{_libdir}/cheops
 
-
-install %{SOURCE1} ${RPM_BUILD_ROOT}%{_applnkdir}/Network/Misc
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/Misc
+install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 gzip -9nf README Changelog
 
@@ -67,3 +68,4 @@ rm -rf $RPM_BUILD_ROOT
 %config	%{_datadir}/cheops/*.conf
 %{_datadir}/cheops/*.xpm
 %{_applnkdir}/Network/Misc/cheops.desktop
+%{_pixmapsdir}/*
