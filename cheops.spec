@@ -1,30 +1,34 @@
-# $Revision: 1.8 $ $Date: 2000-05-01 21:02:34 $
-Summary: 	Network resources viewer and manager
+# $Revision: 1.9 $ $Date: 2000-05-18 16:58:02 $
+Summary:	Network resources viewer and manager
 Summary(pl):	Narzêdzie do wizualizacji i zarz±dzania zasobami sieciowymi
 Name:		cheops
 Version:	0.60pre5
 Release:	1
-Copyright:	GPL
+License:	GPL
 Group:		X11/Applications/Networking
 Group(pl):	X11/Aplikacje/Sieciowe
 Url:		http://www.marko.net/cheops
 Source0:	ftp://ftp.marko.net/pub/cheops/%{name}-%{version}.tar.gz
 Source1:	cheops.desktop
-BuildRequires:  gtk+-devel
+BuildRequires:	gtk+-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
+
 %description
-Cheops aims to be a network "swiss army knife" used for seeing and accessing
-network resources. It's written in GTK+ and uses combination of a variety 
-of network tools (ping, traceroute, halfscan, QueSO). Provides system 
-adminstrators with a simple interface to identyfying and
-accessing their network hardware.
+Cheops aims to be a network "swiss army knife" used for seeing and
+accessing network resources. It's written in GTK+ and uses combination
+of a variety of network tools (ping, traceroute, halfscan, QueSO).
+Provides system adminstrators with a simple interface to identyfying
+and accessing their network hardware.
 
 %description -l pl
-Cheops ma byæ "sieciowym scyzorykiem" u¿ywanym do obrazowania i dostêpu 
-do zasobów sieciowych. Zosta³ napisany przy u¿yciu GTK+; wykorzystuje ró¿ne
-narzêdzia sieciowe (ping, traceroute, halfscan, QueSO), umo¿liwiaj±c 
-administratorom prost± identyfikacjê oraz dostêp do ich sprzêtu sieciowego.
+Cheops ma byæ "sieciowym scyzorykiem" u¿ywanym do obrazowania i
+dostêpu do zasobów sieciowych. Zosta³ napisany przy u¿yciu GTK+;
+wykorzystuje ró¿ne narzêdzia sieciowe (ping, traceroute, halfscan,
+QueSO), umo¿liwiaj±c administratorom prost± identyfikacjê oraz dostêp
+do ich sprzêtu sieciowego.
 
 %prep
 %setup -q
@@ -35,27 +39,30 @@ CFLAGS="$RPM_OPT_FLAGS" \
 make 
 
 %install
-rm -rf ${RPM_BUILD_ROOT}
-install -d ${RPM_BUILD_ROOT}/usr/{X11R6/bin,lib/cheops,share/cheops}
-install cheops ${RPM_BUILD_ROOT}/usr/X11R6/bin
-install pixmaps/*.xpm cheops.conf services.conf ${RPM_BUILD_ROOT}/usr/share/cheops
-install plugins/*.so ${RPM_BUILD_ROOT}/usr/lib/cheops
-strip -s ${RPM_BUILD_ROOT}/usr/{X11R6/bin/*,lib/cheops/*}
-install -d $RPM_BUILD_ROOT/usr/X11R6/share/applnk/Networking
-install %{SOURCE1} ${RPM_BUILD_ROOT}/usr/X11R6/share/applnk/Networking/
+rm -rf $RPM_BUILD_ROOT
+install -d ${RPM_BUILD_ROOT{%{_bindir},%{_libdir}/cheops,%{_datadir}/cheops} \
+	$RPM_BUILD_ROOT%{_applnkdir}/Networking
 
-gzip -9nf COPYING README Changelog
+install -s cheops ${RPM_BUILD_ROOT}%{_prefix}/bin
+install pixmaps/*.xpm cheops.conf services.conf ${RPM_BUILD_ROOT}%{_datadir}/cheops
+install plugins/*.so ${RPM_BUILD_ROOT}%{_libdir}/cheops
+
+strip --strip-unneded $RPM_BUILD_ROOT%{_libdir}/cheops/*.so
+
+install %{SOURCE1} ${RPM_BUILD_ROOT}%{_applnkdir}/Networking/
+
+gzip -9nf README Changelog
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING.gz README.gz Changelog.gz
-%attr(755,root,root) /usr/X11R6/bin/cheops
-%dir	/usr/share/cheops/
-%config	/usr/share/cheops/*.conf
-/usr/share/cheops/*.xpm
-%dir	/usr/lib/cheops
-%attr(755,root,root) /usr/lib/cheops/*.so
-/usr/X11R6/share/applnk/Networking/cheops.desktop
+%doc *.gz
+%attr(755,root,root) %{_bindir}/cheops
+%dir %{_libdir}/cheops
+%attr(755,root,root) %{_libdir}/cheops/*.so
+%config	%{_datadir}/cheops/*.conf
+%dir %{_datadir}/cheops/
+%{_datadir}/cheops/*.xpm
+%{_applnkdir}/Networking/cheops.desktop
