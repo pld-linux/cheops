@@ -1,7 +1,8 @@
 [Desktop Entry]
 Name=Cheops
 Comment=Network viewer and manager
-Comment[pl]=Narzêdzie do wizualizacji i zarz±dzania sieciami
+Comment[pl]=NarzÄ™dzie do wizualizacji i zarzÄ…dzania sieciami
 Exec=cheops
 Terminal=0
 Type=Application
+# vi: encoding=utf-8
