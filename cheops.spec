@@ -1,4 +1,4 @@
-# $Revision: 1.27 $ $Date: 2002-05-13 10:00:14 $
+# $Revision: 1.28 $ $Date: 2002-05-21 23:12:44 $
 Summary:	Network resources viewer and manager
 Summary(pl):	Narzêdzie do wizualizacji i zarz±dzania zasobami sieciowymi
 Name:		cheops
@@ -36,7 +36,7 @@ do ich sprzêtu sieciowego.
 %setup -q
 
 %build
-autoconf
+%{__autoconf}
 %configure
 %{__make}
 
