@@ -1,4 +1,4 @@
-# $Revision: 1.2 $ $Date: 1999-08-27 07:37:29 $
+# $Revision: 1.3 $ $Date: 1999-09-04 09:11:43 $
 Summary: 	Network resources viewer and manager
 Summary(pl):	Narzêdzie do wizualizacji i zarz±dzania zasobami sieciowymi
 Name:		cheops
@@ -33,7 +33,7 @@ ich sprzêtu sieciowego.
 %setup -q
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" 
+CFLAGS="$RPM_OPT_FLAGS" \
 ./configure --prefix=/usr 
 make 
 
@@ -44,8 +44,8 @@ install cheops ${RPM_BUILD_ROOT}/usr/X11R6/bin
 install pixmaps/*.xpm cheops.conf services.conf ${RPM_BUILD_ROOT}/usr/share/cheops
 install plugins/*.so ${RPM_BUILD_ROOT}/usr/lib/cheops
 strip -s ${RPM_BUILD_ROOT}/usr/{X11R6/bin/*,lib/cheops/*}
-install -d $RPM_BUILD_ROOT/etc/X11/applnk/Networking
-install %{SOURCE1} ${RPM_BUILD_ROOT}/etc/X11/applnk/Networking/
+install -d $RPM_BUILD_ROOT/usr/X11R6/share/applnk/Networking
+install %{SOURCE1} ${RPM_BUILD_ROOT}/usr/X11R6/share/applnk/Networking/
 
 gzip -9nf COPYING README Changelog
 
@@ -54,12 +54,12 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %files
-%defattr(0644,root,root,0755)
-%attr(0644,root,root) %doc COPYING.gz README.gz Changelog.gz
-%attr(0755,root,root) /usr/X11R6/bin/cheops
+%defattr(644,root,root,755)
+%doc COPYING.gz README.gz Changelog.gz
+%attr(755,root,root) /usr/X11R6/bin/cheops
 %dir	/usr/share/cheops/
 %config	/usr/share/cheops/*.conf
-%attr(0644,root,root) /usr/share/cheops/*.xpm
+/usr/share/cheops/*.xpm
 %dir	/usr/lib/cheops
-%attr(0755,root,root) /usr/lib/cheops/*.so
-/etc/X11/applnk/Networking/cheops.desktop
+%attr(755,root,root) /usr/lib/cheops/*.so
+/usr/X11R6/share/applnk/Networking/cheops.desktop
