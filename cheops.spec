@@ -1,4 +1,4 @@
-# $Revision: 1.13 $ $Date: 2000-09-09 13:53:39 $
+# $Revision: 1.14 $ $Date: 2000-09-11 17:21:46 $
 Summary:	Network resources viewer and manager
 Summary(pl):	Narzêdzie do wizualizacji i zarz±dzania zasobami sieciowymi
 Name:		cheops
@@ -6,10 +6,11 @@ Version:	0.60pre5
 Release:	1
 License:	GPL
 Group:		X11/Applications/Networking
+Group(de):	X11/Applikationen/Netzwerkwesen
 Group(pl):	X11/Aplikacje/Sieciowe
 Url:		http://www.marko.net/cheops
 Source0:	ftp://ftp.marko.net/pub/cheops/%{name}-%{version}.tar.gz
-Source1:	cheops.desktop
+Source1:	%{name}.desktop
 BuildRequires:	gtk+-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,7 +35,6 @@ do ich sprzêtu sieciowego.
 %setup -q
 
 %build
-LDFLAGS="-s"; export LDFLAGS
 %configure
 %{__make} 
 
@@ -43,7 +43,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d ${RPM_BUILD_ROOT{%{_bindir},%{_libdir}/cheops,%{_datadir}/cheops} \
 	$RPM_BUILD_ROOT%{_applnkdir}/Network/Misc
 
-install -s cheops ${RPM_BUILD_ROOT}%{_prefix}/bin
+install cheops ${RPM_BUILD_ROOT}%{_bindir}
 install pixmaps/*.xpm cheops.conf services.conf ${RPM_BUILD_ROOT}%{_datadir}/cheops
 install plugins/*.so ${RPM_BUILD_ROOT}%{_libdir}/cheops
 
@@ -63,6 +63,5 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/cheops
 %attr(755,root,root) %{_libdir}/cheops/*.so
 %config	%{_datadir}/cheops/*.conf
-%dir %{_datadir}/cheops/
-%{_datadir}/cheops/*.xpm
+%{_datadir}/cheops
 %{_applnkdir}/Network/Misc/cheops.desktop
