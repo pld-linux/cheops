@@ -1,4 +1,4 @@
-# $Revision: 1.33 $ $Date: 2003-05-25 05:46:15 $
+# $Revision: 1.34 $ $Date: 2003-05-26 16:24:47 $
 Summary:	Network resources viewer and manager
 Summary(pl):	Narzêdzie do wizualizacji i zarz±dzania zasobami sieciowymi
 Name:		cheops
@@ -7,6 +7,7 @@ Release:	5
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	ftp://ftp.marko.net/pub/cheops/%{name}-%{version}.tar.gz
+# Source0-md5:	efd4254e3b36b3936a7ebbadf71e28e6
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 URL:		http://www.marko.net/cheops/
