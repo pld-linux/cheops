@@ -1,4 +1,4 @@
-# $Revision: 1.6 $ $Date: 2000-03-28 16:54:15 $
+# $Revision: 1.7 $ $Date: 2000-04-01 11:14:24 $
 Summary: 	Network resources viewer and manager
 Summary(pl):	Narzêdzie do wizualizacji i zarz±dzania zasobami sieciowymi
 Name:		cheops
@@ -13,7 +13,7 @@ Source1:	cheops.desktop
 BuildRequires:	XFree86-devel
 BuildRequires:  gtk+-devel
 BuildRequires:  glib-devel
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Cheops aims to be a network "swiss army knife" used for seeing and accessing
@@ -50,7 +50,6 @@ gzip -9nf COPYING README Changelog
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
 
 %files
 %defattr(644,root,root,755)
