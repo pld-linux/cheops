@@ -1,4 +1,4 @@
-# $Revision: 1.31 $ $Date: 2003-01-18 22:45:27 $
+# $Revision: 1.32 $ $Date: 2003-02-07 18:47:41 $
 Summary:	Network resources viewer and manager
 Summary(pl):	Narzêdzie do wizualizacji i zarz±dzania zasobami sieciowymi
 Name:		cheops
@@ -20,7 +20,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Cheops aims to be a network "swiss army knife" used for seeing and
 accessing network resources. It's written in GTK+ and uses combination
 of a variety of network tools (ping, traceroute, halfscan, QueSO).
-Provides system adminstrators with a simple interface to identyfying
+Provides system administrators with a simple interface to identifying
 and accessing their network hardware.
 
 %description -l pl
