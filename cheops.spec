@@ -1,4 +1,4 @@
-# $Revision: 1.1 $ $Date: 1999-08-26 13:19:48 $
+# $Revision: 1.2 $ $Date: 1999-08-27 07:37:29 $
 Summary: 	Network resources viewer and manager
 Summary(pl):	Narzêdzie do wizualizacji i zarz±dzania zasobami sieciowymi
 Name:		cheops
@@ -9,7 +9,7 @@ Group:		X11/Applications/Networking
 Group(pl):	X11/Aplikacje/Sieciowe
 Url:		http://www.marko.net/cheops
 Source0:	ftp://ftp.marko.net/pub/cheops/%{name}-%{version}.tar.gz
-Source1:	cheops.wmconfig
+Source1:	cheops.desktop
 BuildRequires:	XFree86-devel
 BuildRequires:  gtk+-devel
 BuildRequires:  glib-devel
@@ -44,18 +44,10 @@ install cheops ${RPM_BUILD_ROOT}/usr/X11R6/bin
 install pixmaps/*.xpm cheops.conf services.conf ${RPM_BUILD_ROOT}/usr/share/cheops
 install plugins/*.so ${RPM_BUILD_ROOT}/usr/lib/cheops
 strip -s ${RPM_BUILD_ROOT}/usr/{X11R6/bin/*,lib/cheops/*}
-mkdir -p $RPM_BUILD_ROOT/etc/X11/wmconfig/
-install -m 644 $RPM_SOURCE_DIR/cheops.wmconfig \
-        $RPM_BUILD_ROOT/etc/X11/wmconfig/cheops
+install -d $RPM_BUILD_ROOT/etc/X11/applnk/Networking
+install %{SOURCE1} ${RPM_BUILD_ROOT}/etc/X11/applnk/Networking/
 
 gzip -9nf COPYING README Changelog
-
-
-%post
-wmconfig --output fvwm2 >> /dev/null 2> /dev/null
-
-%postun
-wmconfig --output fvwm2 >> /dev/null 2> /dev/null
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -70,4 +62,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(0644,root,root) /usr/share/cheops/*.xpm
 %dir	/usr/lib/cheops
 %attr(0755,root,root) /usr/lib/cheops/*.so
-%attr(0644,root,root) /etc/X11/wmconfig/cheops
+/etc/X11/applnk/Networking/cheops.desktop
