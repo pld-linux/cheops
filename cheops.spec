@@ -1,4 +1,4 @@
-# $Revision: 1.14 $ $Date: 2000-09-11 17:21:46 $
+# $Revision: 1.15 $ $Date: 2001-08-22 17:24:05 $
 Summary:	Network resources viewer and manager
 Summary(pl):	Narzêdzie do wizualizacji i zarz±dzania zasobami sieciowymi
 Name:		cheops
@@ -47,7 +47,6 @@ install cheops ${RPM_BUILD_ROOT}%{_bindir}
 install pixmaps/*.xpm cheops.conf services.conf ${RPM_BUILD_ROOT}%{_datadir}/cheops
 install plugins/*.so ${RPM_BUILD_ROOT}%{_libdir}/cheops
 
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/cheops/*.so
 
 install %{SOURCE1} ${RPM_BUILD_ROOT}%{_applnkdir}/Network/Misc
 
