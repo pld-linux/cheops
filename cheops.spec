@@ -1,4 +1,4 @@
-# $Revision: 1.19 $ $Date: 2001-11-23 07:39:00 $
+# $Revision: 1.20 $ $Date: 2001-11-23 09:37:17 $
 Summary:	Network resources viewer and manager
 Summary(pl):	Narzêdzie do wizualizacji i zarz±dzania zasobami sieciowymi
 Name:		cheops
@@ -10,7 +10,7 @@ Group(de):	X11/Applikationen/Netzwerkwesen
 Group(pl):	X11/Aplikacje/Sieciowe
 Source0:	ftp://ftp.marko.net/pub/cheops/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
-Source1:	%{name}.png
+Source2:	%{name}.png
 URL:		http://www.marko.net/cheops/
 BuildRequires:	autoconf
 BuildRequires:	gtk+-devel
