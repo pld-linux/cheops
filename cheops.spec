@@ -1,4 +1,4 @@
-# $Revision: 1.21 $ $Date: 2002-01-03 05:47:41 $
+# $Revision: 1.22 $ $Date: 2002-01-18 02:12:33 $
 Summary:	Network resources viewer and manager
 Summary(pl):	Narzêdzie do wizualizacji i zarz±dzania zasobami sieciowymi
 Name:		cheops
