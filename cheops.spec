@@ -1,4 +1,4 @@
-# $Revision: 1.16 $ $Date: 2001-10-01 09:45:40 $
+# $Revision: 1.17 $ $Date: 2001-11-22 10:36:36 $
 Summary:	Network resources viewer and manager
 Summary(pl):	Narzêdzie do wizualizacji i zarz±dzania zasobami sieciowymi
 Name:		cheops
@@ -42,7 +42,7 @@ autoconf
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d ${RPM_BUILD_ROOT{%{_bindir},%{_libdir}/cheops,%{_datadir}/cheops} \
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/cheops,%{_datadir}/cheops} \
 	$RPM_BUILD_ROOT%{_applnkdir}/Network/Misc
 
 install cheops ${RPM_BUILD_ROOT}%{_bindir}
@@ -63,6 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/cheops
 %dir %{_libdir}/cheops
 %attr(755,root,root) %{_libdir}/cheops/*.so
+%dir %{_datadir}/cheops
 %config	%{_datadir}/cheops/*.conf
-%{_datadir}/cheops
+%{_datadir}/cheops/*.xpm
 %{_applnkdir}/Network/Misc/cheops.desktop
