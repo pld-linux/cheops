@@ -1,4 +1,4 @@
-# $Revision: 1.30 $ $Date: 2002-10-19 11:21:52 $
+# $Revision: 1.31 $ $Date: 2003-01-18 22:45:27 $
 Summary:	Network resources viewer and manager
 Summary(pl):	Narzêdzie do wizualizacji i zarz±dzania zasobami sieciowymi
 Name:		cheops
@@ -15,8 +15,6 @@ BuildRequires:	gtk+-devel
 BuildRequires:	ucd-snmp-devel >= 4.2.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 Cheops aims to be a network "swiss army knife" used for seeing and
