@@ -15,7 +15,6 @@ BuildRequires:	gtk+-devel
 BuildRequires:	ucd-snmp-devel >= 4.2.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %description
 Cheops aims to be a network "swiss army knife" used for seeing and
 accessing network resources. It's written in GTK+ and uses combination
