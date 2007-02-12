@@ -1,5 +1,5 @@
 Summary:	Network resources viewer and manager
-Summary(pl):	Narzêdzie do wizualizacji i zarz±dzania zasobami sieciowymi
+Summary(pl.UTF-8):   NarzÄ™dzie do wizualizacji i zarzÄ…dzania zasobami sieciowymi
 Name:		cheops
 Version:	0.61
 Release:	5
@@ -22,12 +22,12 @@ of a variety of network tools (ping, traceroute, halfscan, QueSO).
 Provides system administrators with a simple interface to identifying
 and accessing their network hardware.
 
-%description -l pl
-Cheops ma byæ "sieciowym scyzorykiem" u¿ywanym do obrazowania i
-dostêpu do zasobów sieciowych. Zosta³ napisany przy u¿yciu GTK+;
-wykorzystuje ró¿ne narzêdzia sieciowe (ping, traceroute, halfscan,
-QueSO), umo¿liwiaj±c administratorom prost± identyfikacjê oraz dostêp
-do ich sprzêtu sieciowego.
+%description -l pl.UTF-8
+Cheops ma byÄ‡ "sieciowym scyzorykiem" uÅ¼ywanym do obrazowania i
+dostÄ™pu do zasobÃ³w sieciowych. ZostaÅ‚ napisany przy uÅ¼yciu GTK+;
+wykorzystuje rÃ³Å¼ne narzÄ™dzia sieciowe (ping, traceroute, halfscan,
+QueSO), umoÅ¼liwiajÄ…c administratorom prostÄ… identyfikacjÄ™ oraz dostÄ™p
+do ich sprzÄ™tu sieciowego.
 
 %prep
 %setup -q
