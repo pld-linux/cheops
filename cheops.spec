@@ -1,5 +1,5 @@
 Summary:	Network resources viewer and manager
-Summary(pl.UTF-8):   Narzędzie do wizualizacji i zarządzania zasobami sieciowymi
+Summary(pl.UTF-8):	Narzędzie do wizualizacji i zarządzania zasobami sieciowymi
 Name:		cheops
 Version:	0.61
 Release:	5
