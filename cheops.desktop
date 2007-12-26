@@ -2,9 +2,8 @@
 Name=Cheops
 Comment=Network viewer and manager
 Comment[pl]=Narzędzie do wizualizacji i zarządzania sieciami
-Icon=cheops.png
+Icon=cheops
 Exec=cheops
 Terminal=false
 Type=Application
-Encoding=UTF-8
 # vi: encoding=utf-8
